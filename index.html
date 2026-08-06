@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zero-Knowledge File Encrypter</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="background-decor"></div>
+<main class="container">
+<header>
+<div class="icon-wrapper">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+</div>
+<h1>Zero-Knowledge Encrypter</h1>
+<p>Client-side AES-GCM 256-bit encryption in your browser.</p>
+</header>
+
+<section class="card">
+<div class="input-group">
+<label for="fileInput">Select File</label>
+<div class="file-drop-zone" id="dropZone">
+<input type="file" id="fileInput" />
+<span id="fileName">Drag & drop or click to browse</span>
+</div>
+</div>
+
+<div class="input-group">
+<label for="passwordInput">Secret Passphrase</label>
+<input type="password" id="passwordInput" placeholder="Enter a strong password..." autocomplete="off" />
+</div>
+
+<div class="actions">
+<button id="encryptBtn" class="btn btn-primary">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+Encrypt & Download
+</button>
+<button id="decryptBtn" class="btn btn-secondary">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 9.9-1"></path></svg>
+Decrypt & Restore
+</button>
+</div>
+
+<div id="status" class="status-msg hidden"></div>
+</section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
