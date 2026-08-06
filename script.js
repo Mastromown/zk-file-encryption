@@ -78,7 +78,7 @@ data: Array.from(new Uint8Array(fileBuffer))
 });
 
 const encPayload = new TextEncoder().encode(payload);
-const encryptedData = await window.crypto.subcrypto.encrypt(
+const encryptedData = await window.crypto.subtle.encrypt(
 { name: 'AES-GCM', iv: iv },
 key,
 encPayload
@@ -141,7 +141,7 @@ const ciphertext = buffer.subarray(HEADER_MAGIC.length + SALT_BYTE_LENGTH + IV_B
 
 const key = await deriveKey(password, salt);
 
-const decryptedData = await window.crypto.subcrypto.decrypt(
+const decryptedData = await window.crypto.subtle.decrypt(
 { name: 'AES-GCM', iv: iv },
 key,
 ciphertext
