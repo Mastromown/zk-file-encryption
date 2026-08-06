@@ -31,7 +31,7 @@ statusDiv.textContent = '';
 
 async function deriveKey(password, salt) {
 const enc = new TextEncoder();
-const passwordKey = await window.crypto.subcrypto.importKey(
+const passwordKey = await window.crypto.subtle.importKey(
 'raw',
 enc.encode(password),
 'PBKDF2',
